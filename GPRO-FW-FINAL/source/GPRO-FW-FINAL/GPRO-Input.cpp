@@ -1,3 +1,4 @@
+#pragma once
 #include "GPRO-FW-FINAL/GPRO-Input.h"
 #include <iostream>
 using namespace std;
@@ -13,9 +14,9 @@ int getInput() {
 }
 
 bool validInput(int num, int boardDim) {
-	if (num > 0 && num < boardDim) {
+	if (num >= 0 && num < boardDim) {
 		return true;
 	}
-	
+	cout << "Input Not Valid!" << endl;
 	return false;
 }

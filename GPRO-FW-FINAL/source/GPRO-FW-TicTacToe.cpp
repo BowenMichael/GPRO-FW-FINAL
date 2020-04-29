@@ -25,7 +25,7 @@ void displayGameBoard(gs_tictactoe game) {
 	}
 }
 
-gs_tictactoe_space_state input(gs_tictactoe_space_state plr, gs_tictactoe game) {
+gs_tictactoe_space_state gameLoop(gs_tictactoe_space_state plr, gs_tictactoe game) {
 	if (plr == gs_tictactoe_space_x) {
 		cout << "It is X's turn." << endl;
 		if (playItem(plr, game))
@@ -51,27 +51,18 @@ bool checkForWin(gs_tictactoe game, gs_tictactoe_space_state player) {
 	return false;
 }
 
-int askForColoum()
+bool input(gs_tictactoe_space_state turnState, gs_tictactoe game)
 {
-	int col;
-	cout << "What coloum would you like to play?" << endl;
-	cin >> col;
-	return col;
-}
-
-int askForRow()
-{
-	int row;
-	cout << "What row would you like to play?" << endl;
-	cin >> row;
-	return row;
-}
-
-bool playItem(gs_tictactoe_space_state turnState, gs_tictactoe game)
-{
-	int col = askForColoum();
-	int row = askForRow();
-	if (game[row][col] == gs_tictactoe_space_open && row >= 0 && row < GS_TICTACTOE_BOARD_HEIGHT && col >= 0 && col < GS_TICTACTOE_BOARD_WIDTH) {
+	int row = -1;
+	int col = -1;
+	do {
+		cout << "Enter a Coloum to play" << endl;
+		 col = getInput();
+		cout << "Enter a Row to play" << endl;
+		 row = getInput();
+	} while (!validInput(col, GS_TICTACTOE_BOARD_HEIGHT) && !validInput(row, GS_TICTACTOE_BOARD_HEIGHT));'
+	
+	if (game[row][col] == gs_tictactoe_space_open && validInput(col, GS_TICTACTOE_BOARD_HEIGHT) && validInput(row, GS_TICTACTOE_BOARD_HEIGHT)) {
 		game[row][col] = turnState;
 		return true;
 	}
@@ -141,6 +132,10 @@ void winOutput(gs_tictactoe_space_state player)
 	cout << "Winner Winner!!!" << endl;
 }
 
+void input()
+{
+}
+
 int launchTicTacToe()
 {
 	gs_tictactoe game;
@@ -157,7 +152,7 @@ int launchTicTacToe()
 			break;
 		}
 		displayGameBoard(game);
-		player = input(player, game);
+		player = gameLoop(player, game);
 
 	}
 	displayGameBoard(game);

@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <iomanip>
+#include "GPRO-FW-FINAL/GPRO-Input.h"
 
 using namespace std;
 
@@ -61,17 +62,16 @@ inline gs_tictactoe_index gs_tictactoe_reset(gs_tictactoe game)
 }
 
 void displayGameBoard(gs_tictactoe game);
-gs_tictactoe_space_state input(gs_tictactoe_space_state plr, gs_tictactoe game);
+gs_tictactoe_space_state gameLoop(gs_tictactoe_space_state plr, gs_tictactoe game);
 int launchTicTacToe();
 bool checkForWin(gs_tictactoe game, gs_tictactoe_space_state player);
-int askForColoum();
-int askForRow();
-bool playItem(gs_tictactoe_space_state turnState, gs_tictactoe game);
+bool input(gs_tictactoe_space_state turnState, gs_tictactoe game);
 bool checkHorizontal(gs_tictactoe game, gs_tictactoe_space_state player);
 bool checkVectical(gs_tictactoe game, gs_tictactoe_space_state player);
 bool checkDiagonal(gs_tictactoe game, gs_tictactoe_space_state player);
 bool checkTie();
 void winOutput(gs_tictactoe_space_state player);
+
 
 
 const int POINTS_TO_WIN = 3;
