@@ -18,9 +18,21 @@
     <ClCompile Include="..\..\..\source\GPRO-FW-FINAL\GPRO-FW-FINAL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\source\GPRO-FW-FINAL\GPRO-Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\GPRO-FW-FINAL\GPRO-Input.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\GPRO-FW-TicTacToe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\include\GPRO-FW-FINAL\GPRO-FW-FINAL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\GPRO-FW-TicTacToe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

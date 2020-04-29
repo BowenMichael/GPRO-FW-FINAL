@@ -1,5 +1,4 @@
 #pragma once
 
-const int num = 10;
-
-int getNum();
+#include "GPRO-Input.h"
+#include "GPRO-FW-TicTacToe.h"

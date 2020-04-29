@@ -151,10 +151,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\include\GPRO-FW-FINAL\GPRO-Input.h" />
     <ClCompile Include="..\..\..\source\GPRO-FW-FINAL\GPRO-FW-FINAL.cpp" />
+    <ClCompile Include="..\..\..\source\GPRO-FW-FINAL\GPRO-Input.cpp" />
+    <ClCompile Include="..\..\..\source\GPRO-FW-TicTacToe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\include\GPRO-FW-FINAL\GPRO-FW-FINAL.h" />
+    <ClInclude Include="..\..\..\include\GPRO-FW-TicTacToe.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

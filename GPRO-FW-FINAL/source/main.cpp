@@ -4,7 +4,6 @@
 using namespace std;
 
 int main() {
-	cout << "Hello World" << endl;
-	cout << getNum() << endl;
+	launchTicTacToe();
 	return 0;
 }
