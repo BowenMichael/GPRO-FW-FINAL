@@ -28,14 +28,14 @@ void displayGameBoard(gs_tictactoe game) {
 gs_tictactoe_space_state gameLoop(gs_tictactoe_space_state plr, gs_tictactoe game) {
 	if (plr == gs_tictactoe_space_x) {
 		cout << "It is X's turn." << endl;
-		if (playItem(plr, game))
+		if (input(plr, game))
 			plr = gs_tictactoe_space_o;
 		else
 			cout << endl << "ERROR: That Cell is full for doesn't egsit please try another." << endl;
 	}
 	else if (plr == gs_tictactoe_space_o) {
 		cout << "it is O's Turn." << endl;
-		if (playItem(plr, game))
+		if (input(plr, game))
 			plr = gs_tictactoe_space_x;
 		else
 			cout << "That Cell is full for doesn't egsit please try another." << endl;
@@ -60,7 +60,7 @@ bool input(gs_tictactoe_space_state turnState, gs_tictactoe game)
 		 col = getInput();
 		cout << "Enter a Row to play" << endl;
 		 row = getInput();
-	} while (!validInput(col, GS_TICTACTOE_BOARD_HEIGHT) && !validInput(row, GS_TICTACTOE_BOARD_HEIGHT));'
+	} while (!validInput(col, GS_TICTACTOE_BOARD_HEIGHT) && !validInput(row, GS_TICTACTOE_BOARD_HEIGHT));
 	
 	if (game[row][col] == gs_tictactoe_space_open && validInput(col, GS_TICTACTOE_BOARD_HEIGHT) && validInput(row, GS_TICTACTOE_BOARD_HEIGHT)) {
 		game[row][col] = turnState;
